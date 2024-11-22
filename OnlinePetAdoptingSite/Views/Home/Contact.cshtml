@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="container mt-5">
+    <h1 class="display-5 text-primary mb-4">Contact Us</h1>
+    <p class="lead text-muted">
+        Have questions or need help? We’re here for you! Reach out to us through the form below or use the provided contact details.
+    </p>
+
+    <!-- Contact Information Section -->
+    <div class="row my-5">
+        <div class="col-md-6">
+            <h3 class="fw-bold">Get in Touch</h3>
+            <ul class="list-unstyled mt-3">
+                <li>
+                    <i class="bi bi-geo-alt-fill text-primary"></i> Address: 123 Pet Street, Animal City, PA 12345
+                </li>
+                <li class="mt-2">
+                    <i class="bi bi-telephone-fill text-primary"></i> Phone: +1 800 123 4567
+                </li>
+                <li class="mt-2">
+                    <i class="bi bi-envelope-fill text-primary"></i> Email: support@petadopting.com
+                </li>
+                <li class="mt-2">
+                    <i class="bi bi-clock-fill text-primary"></i> Hours: Mon-Fri, 9AM - 6PM
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="col-md-6">
+            <h3 class="fw-bold">Send Us a Message</h3>
+            <form method="post" action="Contact/SendMessage">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="Name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" name="Email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="Subject" placeholder="Enter subject" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="Message" rows="4" placeholder="Write your message here" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>

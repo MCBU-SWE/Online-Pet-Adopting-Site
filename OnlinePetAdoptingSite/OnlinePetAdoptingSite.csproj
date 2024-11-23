@@ -6,4 +6,11 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Pet\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Pet\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Account\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Account\Register.cshtml" />
+    </ItemGroup>
+
 </Project>

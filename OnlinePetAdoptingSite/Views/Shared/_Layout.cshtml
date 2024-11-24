@@ -1,87 +1,110 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - OnlinePetAdoptingSite</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/OnlinePetAdoptingSite.styles.css" asp-append-version="true"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Append</title>
+    <meta name="description" content="@ViewData["Description"]">
+    <meta name="keywords" content="@ViewData["Keywords"]">
+
+    <!-- Favicons -->
+    <link href="~/assets/img/favicon.png" rel="icon">
+    <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="~/assets/css/main.css" rel="stylesheet">
 </head>
-<body class="d-flex flex-column min-vh-100">
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
-                <img src="~/assets/favicon.ico" alt="Logo" width="40" height="40" class="me-2">
-                <span class="fw-bold">PetAdopting</span>
-            </a>
-            <!-- Toggle Button for Mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navbar Links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active text-primary" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Pet" asp-action="Index">Pet Listings</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Pet" asp-action="Create">Adopt a Pet</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Donate">Donate</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Account
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                            <li><a class="dropdown-item" asp-area="Identity" asp-controller="Account" asp-action="Login">Login</a></li>
-                            <li><a class="dropdown-item" asp-area="Identity" asp-controller="Account" asp-action="Register">Sign Up</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <a class="btn btn-primary ms-3 px-4" asp-area="" asp-controller="Pet" asp-action="Create">Start Adopting</a>
-            </div>
-        </div>
-    </nav>
+<body class="index-page">
+
+<!-- Header -->
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+        <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center me-auto me-xl-0">
+            <h1 class="sitename">Append</h1><span>.</span>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index" class="active">Home</a></li>
+                <li><a href="~/#about">About</a></li>
+                <li><a href="~/#services">Services</a></li>
+                <li><a href="~/#portfolio">Portfolio</a></li>
+                <li><a href="~/#pricing">Pricing</a></li>
+                <li><a href="~/#team">Team</a></li>
+                <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">Dropdown 1</a></li>
+                        <li class="dropdown">
+                            <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="#">Deep Dropdown 1</a></li>
+                                <li><a href="#">Deep Dropdown 2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="~/#contact">Contact</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted" href="~/#about">Get Started</a>
+    </div>
 </header>
 
-<div class="container flex-grow-1">
-    <main role="main" class="pb-3">
+<!-- Main Content -->
+<main role="main">
         @RenderBody()
-    </main>
-</div>
+</main>
 
-<footer class="border-top footer text-muted mt-auto">
-    <div class="container d-flex justify-content-between">
-        <div>
-            &copy; 2024 - OnlinePetAdoptingSite
+<!-- Footer -->
+<footer id="footer" class="footer position-relative light-background">
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-about">
+                <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
+                    <span class="sitename">Append</span>
+                </a>
+                <p>Cras fermentum odio eu feugiat lide par naso tierra...</p>
+                <div class="social-links d-flex mt-4">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a> |
-            <a asp-area="" asp-controller="Home" asp-action="Terms">Terms of Use</a> |
-            <a asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a>
-        </div>
-        <div>
-            <a href="https://facebook.com" target="_blank">Facebook</a> |
-            <a href="https://twitter.com" target="_blank">Twitter</a> |
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-        </div>
+    </div>
+
+    <div class="container text-center mt-4">
+        <p>© 2024 <strong class="sitename">Append</strong>. All Rights Reserved</p>
     </div>
 </footer>
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-@await RenderSectionAsync("Scripts", required: false)
+<!-- Scripts -->
+<script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/assets/js/main.js"></script>
+@RenderSection("Scripts", required: false)
 </body>
 </html>

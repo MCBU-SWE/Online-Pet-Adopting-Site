@@ -35,9 +35,16 @@ public class HomeController : Controller
 
     public IActionResult About()
     {
-        return View();
-    }
+        var model = new
+        {
+            Title = "About Us",
+            Description = "Learn more about PetSoLive, our mission, and how we help pets find loving homes.",
+            PreviousPageTitle = "Home",
+            CurrentPageTitle = "About Us"
+        };
 
+        return View(model);
+    }
 
     public IActionResult Support()
     {

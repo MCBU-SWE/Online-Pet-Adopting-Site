@@ -2,17 +2,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace OnlinePetAdoptingSite.Controllers;
 
-public class PetController : Controller
+public class AdoptionController : Controller
 {
-
-    public IActionResult Index()
+    public IActionResult List()
     {
         return View();
     }
+
+
 
     public IActionResult Create()
     {
         return View();
     }
-    
 }

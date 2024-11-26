@@ -4,18 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>@ViewData["Title"] - Append</title>
+    <title>@ViewData["Title"] - PetSoLive</title>
     <meta name="description" content="@ViewData["Description"]">
     <meta name="keywords" content="@ViewData["Keywords"]">
 
     <!-- Favicons -->
-    <link asp-href-include="~/assets/img/favicon.png" rel="icon">
+    <link asp-href-include="~/assets/img/favicon-paw.png" rel="icon">
     <link asp-href-include="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link asp-href-include="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,38 +28,32 @@
     <link asp-href-include="~/assets/css/main.css" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body class="services-details-page">
 
 <!-- Header Section -->
-<header id="header" class="header d-flex align-items-center fixed-top">
+<header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
         <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center me-auto me-xl-0">
-            <h1 class="sitename">Append</h1><span>.</span>
+            <h1 class="sitename">PetSoLive</h1><span>.</span>
         </a>
 
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li><a asp-controller="Home" asp-action="Index" class="active">Home</a></li>
-                <li><a asp-controller="Home" asp-route-fragment="about">About</a></li>
-                <li><a asp-controller="Home" asp-route-fragment="services">Services</a></li>
-                <li><a asp-controller="Home" asp-route-fragment="portfolio">Portfolio</a></li>
-                <li><a asp-controller="Home" asp-route-fragment="pricing">Pricing</a></li>
-                <li><a asp-controller="Home" asp-route-fragment="team">Team</a></li>
-                <li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
-                <li class="dropdown">
-                    <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">Dropdown 1</a></li>
-                        <li><a href="#">Dropdown 2</a></li>
-                    </ul>
-                </li>
-                <li><a asp-controller="Home" asp-route-fragment="contact">Contact</a></li>
+                <li><a asp-controller="Home" asp-action="About">About Us</a></li>
+                <li><a asp-controller="Adoption" asp-action="List">Adopt a Pet</a></li>
+                <li><a asp-controller="Veterinarian" asp-action="FindVolunteers">Find a Veterinarian</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" asp-controller="Home" asp-route-fragment="about">Get Started</a>
-
+        <!-- User Actions -->
+        <div class="user-actions d-flex align-items-center">
+            <a class="btn-login me-2" asp-controller="Account" asp-action="Login">Log In</a>
+            <a class="btn-register me-2" asp-controller="Account" asp-action="Register">Sign Up</a>
+            <a class="btn-adopt btn-getstarted" asp-controller="Adoption" asp-action="Create">Adopt a Pet</a>
+        </div>
     </div>
 </header>
 
@@ -72,11 +66,13 @@
 <footer id="footer" class="footer position-relative light-background">
     <div class="container footer-top">
         <div class="row gy-4">
-            <div class="col-lg-5 col-md-12 footer-about">
-                <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
-                    <span class="sitename">Append</span>
+
+            <!-- About Section -->
+            <div class="col-lg-4 col-md-6 footer-about">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <span class="sitename">PetSoLive</span>
                 </a>
-                <p>Cras fermentum odio eu feugiat lide par naso tierra...</p>
+                <p>Your trusted platform for pet adoption and care. Connect with passionate pet lovers and volunteers dedicated to helping animals find loving homes.</p>
                 <div class="social-links d-flex mt-4">
                     <a href="#"><i class="bi bi-twitter"></i></a>
                     <a href="#"><i class="bi bi-facebook"></i></a>
@@ -84,20 +80,49 @@
                     <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
+
+            <!-- Useful Links -->
             <div class="col-lg-2 col-6 footer-links">
-                <h4>Useful Links</h4>
+                <h4>Quick Links</h4>
                 <ul>
-                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Adopt a Pet</a></li>
+                    <li><a href="#">Volunteer Veterinarians</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
+            </div>
+
+            <!-- User Services -->
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>User Services</h4>
+                <ul>
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Pet Care Tips</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+                <h4>Contact Us</h4>
+                <p>123 Pet Street</p>
+                <p>Animal City, AC 12345</p>
+                <p>United States</p>
+                <p class="mt-4"><strong>Phone:</strong> <span>+1 800 123 4567</span></p>
+                <p><strong>Email:</strong> <span>support@petsolive.com</span></p>
             </div>
         </div>
     </div>
 
     <div class="container text-center mt-4">
-        <p>© 2024 <strong class="sitename">Append</strong>. All Rights Reserved</p>
+        <p>© 2024 <strong class="sitename">PetSoLive</strong>. All Rights Reserved.</p>
+        <p>Powered by Pet Lovers Worldwide.</p>
     </div>
 </footer>
+
 
 <!-- Scroll Top Button -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -118,7 +143,7 @@
 <!-- Main JS File -->
 <script asp-src-include="~/assets/js/main.js"></script>
 
-<!-- Sayfa Özel Script -->
+<!-- Page-Specific Scripts -->
 @RenderSection("Scripts", required: false)
 </body>
 

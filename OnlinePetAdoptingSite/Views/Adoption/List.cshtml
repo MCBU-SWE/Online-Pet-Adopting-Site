@@ -1,8 +1,34 @@
-@model dynamic
-
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+ViewBag.Title = "Adoption List";
+Layout = "_Layout";
 }
 
-<h2>title</h2>
+<!-- Page Title -->
+<div class="page-title" data-aos="fade">
+    <div class="heading">
+        <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1>@ViewBag.Title</h1>
+                    <p class="mb-0">Find your perfect pet from the adoption list. We have a variety of animals ready for adoption.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="current">@ViewBag.Title</li>
+            </ol>
+        </div>
+    </nav>
+</div><!-- End Page Title -->
+
+<!-- Starter Section Section -->
+<section id="starter-section" class="starter-section section">
+    <div class="container" data-aos="fade-up">
+        <p>This section is dynamically rendered based on the page model.</p>
+    </div>
+</section><!-- /Starter Section Section -->
+

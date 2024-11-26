@@ -17,22 +17,10 @@ public class HomeController : Controller
     {
         return View();
     }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    public IActionResult Terms()
-    {
-        return View();
-    }
-
     public IActionResult Contact()
     {
         return View();
     }
-
     public IActionResult About()
     {
         var model = new
@@ -46,10 +34,7 @@ public class HomeController : Controller
         return View(model);
     }
 
-    public IActionResult Support()
-    {
-        return View();
-    }    public IActionResult Donate()
+    public IActionResult Faq()
     {
         return View();
     }

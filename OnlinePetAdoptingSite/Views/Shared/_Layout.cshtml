@@ -41,7 +41,7 @@
             <ul>
                 <li><a asp-controller="Home" asp-action="Index" class="active">Home</a></li>
                 <li><a asp-controller="Home" asp-action="About">About Us</a></li>
-                <li><a asp-controller="Adoption" asp-action="List">Adopt a Pet</a></li>
+                <li><a asp-controller="Adoption" asp-action="List">Pets</a></li>
                 <li><a asp-controller="Veterinarian" asp-action="FindVolunteers">Find a Veterinarian</a></li>
                 <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
             </ul>
@@ -69,7 +69,7 @@
 
             <!-- About Section -->
             <div class="col-lg-4 col-md-6 footer-about">
-                <a href="index.html" class="logo d-flex align-items-center">
+                <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
                     <span class="sitename">PetSoLive</span>
                 </a>
                 <p>Your trusted platform for pet adoption and care. Connect with passionate pet lovers and volunteers dedicated to helping animals find loving homes.</p>
@@ -123,7 +123,6 @@
     </div>
 </footer>
 
-
 <!-- Scroll Top Button -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -145,6 +144,7 @@
 
 <!-- Page-Specific Scripts -->
 @RenderSection("Scripts", required: false)
+
 </body>
 
 </html>

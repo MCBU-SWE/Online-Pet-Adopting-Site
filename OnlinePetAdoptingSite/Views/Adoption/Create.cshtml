@@ -1,8 +1,54 @@
 @model dynamic
 
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+ViewBag.Title = "Adopt a Pet";
+Layout = "_Layout";
 }
 
-<h2>title</h2>
+<!-- Adopt a Pet Section -->
+<section id="adopt" class="adopt-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <h2 class="text-center mb-4">Adopt a Pet</h2>
+                <form asp-action="Adopt" method="post" enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label for="petName" class="form-label">Pet Name</label>
+                        <input type="text" class="form-control" id="petName" name="petName" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="petType" class="form-label">Pet Type</label>
+                        <select class="form-control" id="petType" name="petType" required>
+                            <option value="" disabled selected>Select Pet Type</option>
+                            <option value="Dog">Dog</option>
+                            <option value="Cat">Cat</option>
+                            <option value="Rabbit">Rabbit</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="petAge" class="form-label">Pet Age (in years)</label>
+                        <input type="number" class="form-control" id="petAge" name="petAge" min="0" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="petDescription" class="form-label">Pet Description</label>
+                        <textarea class="form-control" id="petDescription" name="petDescription" rows="4" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="petImage" class="form-label">Pet Image</label>
+                        <input type="file" class="form-control" id="petImage" name="petImage" accept="image/*" required>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Submit Adoption Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

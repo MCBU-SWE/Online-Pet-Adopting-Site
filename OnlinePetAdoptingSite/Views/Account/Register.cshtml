@@ -1,20 +1,57 @@
-@model dynamic
-
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+ViewData["Title"] = "Sign Up - PetSoLive";
+ViewData["Description"] = "Create an account to join PetSoLive and begin adopting pets and connecting with animal lovers.";
 }
 
-<h2>Register</h2>
-<form method="post">
-    <label for="username">Username:</label>
-    <input id="username" name="username" type="text" />
-    <br />
-    <label for="password">Password:</label>
-    <input id="password" name="password" type="password" />
-    <br />
-    <label for="email">Email:</label>
-    <input id="email" name="email" type="email" />
-    <br />
-    <button type="submit">Sign Up</button>
-</form>
+<section id="register" class="register section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="register-form shadow p-4 rounded">
+                    <h2 class="text-center mb-4">Sign Up</h2>
+                    <form method="post" asp-action="Register">
+                        @if (ViewData["ErrorMessage"] != null)
+                        {
+                        <div class="alert alert-danger">@ViewData["ErrorMessage"]</div>
+                        }
+
+                        <div class="mb-3">
+                            <label for="Name" class="form-label">Full Name</label>
+                            <input type="text" id="Name" name="Name" class="form-control" placeholder="Enter your full name" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Email" class="form-label">Email Address</label>
+                            <input type="email" id="Email" name="Email" class="form-control" placeholder="Enter your email" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Password" class="form-label">Password</label>
+                            <input type="password" id="Password" name="Password" class="form-control" placeholder="Create a password" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" placeholder="Confirm your password" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="TermsAndConditions" name="TermsAndConditions" required>
+                                <label class="form-check-label" for="TermsAndConditions">I agree to the <a href="#" class="text-primary">terms and conditions</a>.</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </div>
+
+                        <div class="text-center">
+                            <p>Already have an account? <a href="@Url.Action("Login", "Account")" class="text-primary">Log in here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

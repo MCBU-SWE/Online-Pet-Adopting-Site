@@ -15,4 +15,9 @@ public class AdoptionController : Controller
     {
         return View();
     }
+
+    public IActionResult Example()
+    {
+        return View();
+    }
 }

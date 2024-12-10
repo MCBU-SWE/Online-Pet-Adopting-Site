@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlinePetAdoptingSite", "On
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{E5CEF2A8-C9D6-4F6A-B3B7-974EC1738171}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{05DC1BA1-01C9-49AD-93C4-B6AD97748298}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{E5CEF2A8-C9D6-4F6A-B3B7-974EC1738171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5CEF2A8-C9D6-4F6A-B3B7-974EC1738171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5CEF2A8-C9D6-4F6A-B3B7-974EC1738171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05DC1BA1-01C9-49AD-93C4-B6AD97748298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05DC1BA1-01C9-49AD-93C4-B6AD97748298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05DC1BA1-01C9-49AD-93C4-B6AD97748298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05DC1BA1-01C9-49AD-93C4-B6AD97748298}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

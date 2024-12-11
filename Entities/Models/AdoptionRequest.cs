@@ -1,4 +1,6 @@
-namespace OnlinePetAdoptingSite.Models;
+namespace Entities.Models;
+
+
 
 
 public class AdoptionRequest

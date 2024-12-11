@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using OnlinePetAdoptingSite.Models;
+using Entities.Models;
 
 namespace OnlinePetAdoptingSite.Controllers;
 

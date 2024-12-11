@@ -22,7 +22,7 @@ namespace OnlinePetAdoptingSite.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("OnlinePetAdoptingSite.Models.Pet", b =>
+            modelBuilder.Entity("Entities.Models.Pet", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -75,7 +75,7 @@ namespace OnlinePetAdoptingSite.Migrations
                     b.ToTable("Pets");
                 });
 
-            modelBuilder.Entity("OnlinePetAdoptingSite.Models.User", b =>
+            modelBuilder.Entity("Entities.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -119,7 +119,7 @@ namespace OnlinePetAdoptingSite.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("OnlinePetAdoptingSite.Models.Veterinarian", b =>
+            modelBuilder.Entity("Entities.Models.Veterinarian", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -151,22 +151,22 @@ namespace OnlinePetAdoptingSite.Migrations
                     b.ToTable("Veterinarians");
                 });
 
-            modelBuilder.Entity("OnlinePetAdoptingSite.Models.Pet", b =>
+            modelBuilder.Entity("Entities.Models.Pet", b =>
                 {
-                    b.HasOne("OnlinePetAdoptingSite.Models.User", "Owner")
+                    b.HasOne("Entities.Models.User", "Owner")
                         .WithMany()
                         .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("OnlinePetAdoptingSite.Models.Veterinarian", null)
+                    b.HasOne("Entities.Models.Veterinarian", null)
                         .WithMany("PetsTreated")
                         .HasForeignKey("VeterinarianId");
 
                     b.Navigation("Owner");
                 });
 
-            modelBuilder.Entity("OnlinePetAdoptingSite.Models.Veterinarian", b =>
+            modelBuilder.Entity("Entities.Models.Veterinarian", b =>
                 {
                     b.Navigation("PetsTreated");
                 });
